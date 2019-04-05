@@ -1,0 +1,11 @@
+#canvas {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid black;
+  /* background-image: url(../bg1.jpg); */
+}
+
+button {
+  padding: 5px 8px;
+  position: fixed;
+}
