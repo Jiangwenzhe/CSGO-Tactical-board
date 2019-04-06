@@ -5,12 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>csgo </title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1127465_j6u0oljpbcb.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <canvas id="canvas" width="1024" height="1024"></canvas>
-  <button id="brush">笔刷</button>
-  <button id="eraser">橡皮擦</button>
+  <main>
+    <div class="left">
+        <div class="colorSelector">
+            <ul>
+              <li class="green active"></li>
+              <li class="yellow"></li>
+              <li class="red"></li>
+              <li class="blue"></li>
+              <li class="black"></li>
+            </ul>
+          </div>
+    </div>
+    <div class="center">
+        <canvas id="canvas" width="1024" height="1024"></canvas>
+    </div>
+    <div class="right">
+        <select id="mapSelector">
+            <option value="dust2">dust2</option>
+            <option value="inferno">inferno</option>
+          </select>
+        <div class="controlPanel">
+            <ul>
+              <li id="brush" class="active"><i class="iconfont icon-pen"></i></li>
+              <li id="eraser"><i class="iconfont icon-eraser"></i></li>
+              <li id="download"><i class="iconfont icon-download"></i></li>
+            </ul>
+          </div>
+    </div>
+</main>
   <script src="js/main.js"></script>
 </body>
 </html>

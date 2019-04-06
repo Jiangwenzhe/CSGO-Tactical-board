@@ -1,11 +1,135 @@
-#canvas {
-  display: block;
-  margin: 20px auto;
-  border: 1px solid black;
-  /* background-image: url(../bg1.jpg); */
+* {
+  padding: 0;
+  margin:  0;
 }
 
-button {
-  padding: 5px 8px;
-  position: fixed;
+ul,li {
+  text-decoration: none;
+  list-style: none;
 }
+body {
+  background: rgb(51, 51, 51);
+}
+
+main {
+  position: relative;
+
+}
+
+.left {
+  position: fixed;
+  left: 100px;
+  top: 40%;
+
+}
+
+.right {
+  position: fixed;
+  right: 90px;
+  top: 40%;
+}
+
+
+#canvas {
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  cursor: crosshair;
+  border: 1px solid #95a5a6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+}
+
+.controlPanel {
+  padding: 3px;
+  margin-top: 5px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.498039) 2px 4px 2px 0px;
+  cursor: pointer;
+}
+
+.controlPanel li {
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 5px;
+  margin: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.controlPanel li.active::after {
+  position: absolute;
+  right: 2px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 25px solid red;
+  border-right: 2px solid red;
+  border-left: 2px solid red;
+  border-bottom: 10px solid red;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+}
+
+.controlPanel li:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.controlPanel .iconfont {
+  font-size: 36px;
+}
+
+.colorSelector {
+  padding: 10px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.colorSelector li{
+  width:16px;
+  height:16px;
+  margin:16px 0;
+  border-radius: 50%;
+  transition: all .2s;
+  cursor:pointer;
+}
+
+.colorSelector li.active{
+  transform:scale(1.4);
+}
+
+.colorSelector  li.green {
+  margin-top: 0;
+  background:#03FF00;
+  border: 1px solid green;
+  box-shadow: 0 2px 5px rgba(0,0,0,.6);
+}
+
+.colorSelector li.yellow {
+  background:#FFFF00;
+  border: 1px solid yellow;
+  box-shadow: 0 2px 5px rgba(0,0,0,.6);
+}
+
+.colorSelector li.red {
+  background:#FF0200;
+  border: 1px solid red;
+  box-shadow: 0 2px 5px rgba(0,0,0,.6);
+}
+
+.colorSelector li.blue {
+  background:#0301FF;
+  border: 1px solid blue;
+  box-shadow: 0 2px 5px rgba(0,0,0,.6);
+}
+
+.colorSelector li.black{
+  margin-bottom: 0;
+  background:#000;
+  border: 1px solid #000;
+  box-shadow: 0 2px 5px rgba(0,0,0,.6);
+}
+
