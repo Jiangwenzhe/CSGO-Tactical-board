@@ -71,20 +71,12 @@ const clearWholeCanvas = () => {
   ctx.clearRect(0, 0, canvas.width,canvas.height);
 }
 
-function cloneCanvas(oldCanvas) {
-
-    //create a new canvas
-    var newCanvas = document.createElement('canvas');
-    var context = newCanvas.getContext('2d');
-
-    //set dimensions
+const cloneCanvas = oldCanvas => {
+    let newCanvas = document.createElement('canvas');
+    let context = newCanvas.getContext('2d');
     newCanvas.width = oldCanvas.width;
     newCanvas.height = oldCanvas.height;
-
-    //apply the old canvas to the new one
     context.drawImage(oldCanvas, 0, 0);
-
-    //return the new canvas
     return newCanvas;
 }
 
