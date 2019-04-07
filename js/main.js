@@ -6,8 +6,8 @@ const eraser = document.querySelector('#eraser');
 const clearCanvas = document.querySelector('#clear');
 const mapSelector = document.querySelector('#mapSelector');
 const downloadBtn = document.querySelector('#download');
-const colorSelector = document.querySelector('.colorSelector > ul');
-const lineSelector = document.querySelector('.lineSelector > ul');
+const colorSelector = document.querySelector('.colorSelector>ul');
+const lineSelector = document.querySelector('.lineSelector>ul');
 
 
 let isAllowDrawLine = false;
@@ -28,7 +28,6 @@ const linesWidth = {
   medium: 4,
   thin: 2,
 }
-
 
 const init = () => {
   make_canvas_background('../maps/de_dust2.jpg');
@@ -64,20 +63,23 @@ const clearWholeCanvas = () => {
 }
 
 colorSelector.addEventListener('click', e => {
-  let arr = document.querySelectorAll('.colorSelector>ul>li');
-  arr.forEach(element => element.className.indexOf('active') ?
-  element.classList.remove('active') : null);
-  lineColor = burshColor[e.target.classList[0]];
-  e.target.classList.add('active');
+  if(e.target.value != undefined) {
+    let arr = document.querySelectorAll('.colorSelector>ul>li');
+    arr.forEach(element => element.className.indexOf('active') ?
+    element.classList.remove('active') : undefined);
+    lineColor = burshColor[e.target.classList[0]];
+    e.target.classList.add('active');
+  }
 });
 
 lineSelector.addEventListener('click', e => {
-  let arr = document.querySelectorAll('.lineSelector>ul>li');
-  arr.forEach(element => element.className.indexOf('active') ?
-  element.classList.remove('active') : null);
-  lineWidth = linesWidth[e.target.classList[0]];
-  e.target.classList.add('active');
-  console.log(e.target.classList)
+  if(e.target.value != undefined) {
+    let arr = document.querySelectorAll('.lineSelector>ul>li');
+    arr.forEach(element => element.className.indexOf('active') ?
+    element.classList.remove('active') : undefined);
+    lineWidth = linesWidth[e.target.classList[0]];
+    e.target.classList.add('active');
+  }
 })
 
 eraser.addEventListener('click', () => {
