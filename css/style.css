@@ -18,14 +18,13 @@ main {
 
 .left {
   position: fixed;
-  left: 100px;
+  left: 6%;
   top: 40%;
-
 }
 
 .right {
   position: fixed;
-  right: 90px;
+  right: 6%;
   top: 40%;
 }
 
@@ -133,3 +132,45 @@ main {
   box-shadow: 0 2px 5px rgba(0,0,0,.6);
 }
 
+.lineSelector {
+  position: fixed;
+  left: calc(6% + 38px);
+  top: calc(40% + 18px);
+  width: 40px;
+  height: 80px;
+  background: #fff;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineSelector li {
+  transition: all .2s;
+  cursor:pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.lineSelector li span{
+  width:100%;
+  display:block;
+  background:#2e2e2e;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+.lineSelector li.active{
+  transform:scale(1.4);
+  padding: 4px 0;
+}
+
+.lineSelector li.thick span{
+  height:6px;
+}
+.lineSelector li.medium span{
+  height:4px;
+}
+.lineSelector li.thin span{
+  height:2px;
+}
