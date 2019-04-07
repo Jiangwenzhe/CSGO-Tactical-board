@@ -30,7 +30,7 @@ const linesWidth = {
 }
 
 const init = () => {
-  make_canvas_background('../maps/de_dust2.jpg');
+  make_canvas_background('https://i.loli.net/2019/04/07/5ca9c13f07dff.jpg');
 }
 
 const mousePositionOnCanvas = (canvas, x, y) => {
