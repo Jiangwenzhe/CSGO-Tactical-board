@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+
 const brush = document.querySelector('#brush');
 const eraser = document.querySelector('#eraser');
 const clearCanvas = document.querySelector('#clear');
@@ -14,6 +15,7 @@ let isAllowDrawLine = false;
 let isAllowWipeLine = false;
 let lineWidth = 4;
 let lineColor = '#03FF00';
+let backgroundImage_URL = 'https://i.loli.net/2019/04/07/5ca9c13f07dff.jpg';
 
 const burshColor = {
   green: '#03FF00',
@@ -30,7 +32,7 @@ const linesWidth = {
 }
 
 const init = () => {
-  make_canvas_background('https://i.loli.net/2019/04/07/5ca9c13f07dff.jpg');
+  make_canvas_background(backgroundImage_URL);
 }
 
 const mousePositionOnCanvas = (canvas, x, y) => {
@@ -41,10 +43,17 @@ const mousePositionOnCanvas = (canvas, x, y) => {
   }
 }
 
+// const draw_canvas_background = (url) => {
+//   background_image = new Image();
+//   background_image.setAttribute('crossOrigin', 'anonymous');
+//   background_image.src = url;
+//   background_image.onload = () => {
+//     ctx.drawImage(background_image, 0, 0);
+//   }
+// }
+
 const make_canvas_background = url => {
-  background_image = new Image();
-  background_image.src = url;
-  background_image.onload = () => ctx.drawImage(background_image, 0, 0);
+  canvas.style.backgroundImage = `url(${url})`
 }
 
 const drawLine = (startPoint, endPoint) => {
@@ -60,6 +69,23 @@ const drawLine = (startPoint, endPoint) => {
 
 const clearWholeCanvas = () => {
   ctx.clearRect(0, 0, canvas.width,canvas.height);
+}
+
+function cloneCanvas(oldCanvas) {
+
+    //create a new canvas
+    var newCanvas = document.createElement('canvas');
+    var context = newCanvas.getContext('2d');
+
+    //set dimensions
+    newCanvas.width = oldCanvas.width;
+    newCanvas.height = oldCanvas.height;
+
+    //apply the old canvas to the new one
+    context.drawImage(oldCanvas, 0, 0);
+
+    //return the new canvas
+    return newCanvas;
 }
 
 colorSelector.addEventListener('click', e => {
@@ -99,11 +125,20 @@ clearCanvas.addEventListener('click', () => {
 });
 
 downloadBtn.addEventListener('click', () => {
-  var link = document.createElement('a');
-  link.href = canvas.toDataURL("image/png", 1.0);
-  link.download = 'CSGO-Tactical.png';
-  link.target = '_blank';
-  link.click();
+  ctx.globalCompositeOperation="destination-over";
+  background_image = new Image();
+  background_image.setAttribute('crossOrigin', 'anonymous');
+  background_image.src = backgroundImage_URL;
+  background_image.onload = () => {
+    ctx.drawImage(background_image, 0, 0);
+    let link = document.createElement('a');
+    link.href = canvas.toDataURL("image/png");
+    link.download = 'CSGO-Tactical.png';
+    link.target = '_blank';
+    link.click();
+    clearWholeCanvas();
+    ctx.globalCompositeOperation="source-over";
+  }
 });
 
 mapSelector.addEventListener('change', e => {
