@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>csgo </title>
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1127465_j6u0oljpbcb.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1127465_oxjsz9gcu7.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <main>
     <div class="left">
-        <div class="colorSelector">
-            <ul>
-              <li class="green active"></li>
-              <li class="yellow"></li>
-              <li class="red"></li>
-              <li class="blue"></li>
-              <li class="black"></li>
-            </ul>
-        </div>
-        <div class="lineSelector">
-          <ul>
-            <li class="thick active"><span></span></li>
-            <li class="medium"><span></span></li>
-            <li class="thin"><span></span></li>
-          </ul>
-        </div>
+      <div class="colorSelector">
+        <ul>
+          <li class="green active"></li>
+          <li class="yellow"></li>
+          <li class="red"></li>
+          <li class="blue"></li>
+          <li class="black"></li>
+        </ul>
+      </div>
+      <div class="lineSelector">
+        <ul>
+          <li class="thick"></li>
+          <li class="medium active"></li>
+          <li class="thin"></li>
+        </ul>
+      </div>
     </div>
     <div class="center">
-        <canvas id="canvas" width="1024" height="1024"></canvas>
+      <canvas id="canvas" width="1024" height="1024"></canvas>
     </div>
     <div class="right">
+      <div class="map-select">
         <select id="mapSelector">
-            <option value="dust2">dust2</option>
-            <option value="inferno">inferno</option>
-          </select>
-        <div class="controlPanel">
-            <ul>
-              <li id="brush" class="active"><i class="iconfont icon-pen"></i></li>
-              <li id="eraser"><i class="iconfont icon-eraser"></i></li>
-              <li id="download"><i class="iconfont icon-download"></i></li>
-            </ul>
-          </div>
+          <option value="dust2">dust2</option>
+          <option value="inferno">inferno</option>
+        </select>
+      </div>
+      <div class="controlPanel">
+        <ul>
+          <li id="brush" class="active"><i class="iconfont icon-pen"></i></li>
+          <li id="eraser"><i class="iconfont icon-eraser"></i></li>
+          <li id="clear"><i class="iconfont icon-clear"></i></li>
+          <li id="download"><i class="iconfont icon-download"></i></li>
+        </ul>
+      </div>
     </div>
-</main>
+  </main>
   <script src="js/main.js"></script>
 </body>
+
 </html>

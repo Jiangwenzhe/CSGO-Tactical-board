@@ -28,7 +28,6 @@ main {
   top: 40%;
 }
 
-
 #canvas {
   margin: 20px auto;
   display: block;
@@ -38,9 +37,22 @@ main {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
 }
 
+.map-select {
+  padding: 3px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.map-select select {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 .controlPanel {
   padding: 3px;
-  margin-top: 5px;
+  margin-top: 8px;
   background: #fff;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.498039) 2px 4px 2px 0px;
@@ -136,25 +148,27 @@ main {
   position: fixed;
   left: calc(6% + 38px);
   top: calc(40% + 18px);
-  width: 40px;
-  height: 80px;
   background: #fff;
   border-radius: 0 5px 5px 0;
+}
+
+.lineSelector ul {
+  width: 40px;
+  height: 80px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
 .lineSelector li {
   transition: all .2s;
-  cursor:pointer;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 10px;
 }
 
-.lineSelector li span{
-  width:100%;
-  display:block;
+.lineSelector li {
+  cursor:pointer;
   background:#2e2e2e;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,.3);
@@ -162,15 +176,14 @@ main {
 
 .lineSelector li.active{
   transform:scale(1.4);
-  padding: 4px 0;
 }
 
-.lineSelector li.thick span{
-  height:6px;
+.lineSelector li.thick {
+  height:7px;
 }
-.lineSelector li.medium span{
-  height:4px;
+.lineSelector li.medium {
+  height:5px;
 }
-.lineSelector li.thin span{
-  height:2px;
+.lineSelector li.thin {
+  height:3px;
 }
